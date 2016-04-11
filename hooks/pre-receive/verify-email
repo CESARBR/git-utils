@@ -12,6 +12,9 @@ do
         echo "ERROR: At least 1 commit was not made using a @$domain email address."
         echo "       Please check your git logs and make sure both author and committer emails"
         echo "       are emails from @$domain and try again.\n"
+	echo "To configure your e-mail address: git config user.email {seuemail}@cesar.org.br"
+	echo "You may need to amend the commit: git commit --amend --reset-author"
+	echo "Do this and check your git logs before pushing again. :)"
         exit 1;
       fi
     done
