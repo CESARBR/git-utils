@@ -7,7 +7,7 @@ do
     echo "Checking $oldrev $newrev $ref"
     for committer in `git log --format='%ce:%ae' $oldrev..$newrev`
     do
-      echo "$committer" | grep -E "[[:alnum:]]*@$domain:[[:alnum:]]*@$domain"
+      echo "$committer" | grep -E "[[:alnum:]]+@$domain:[[:alnum:]]+@$domain"
       if [ $? -eq 1 ] ; then
         echo "ERROR: At least 1 commit was not made using a @$domain email address."
         echo "       Please check your git logs and make sure both author and committer emails"
